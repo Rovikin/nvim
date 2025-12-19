@@ -1,113 +1,65 @@
 return {
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000
-  },
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
-		config = function ()
+		config = function()
 			vim.cmd([[colorscheme catppuccin]])
-			require("catppuccin").setup {
+			require("catppuccin").setup({
 				flavour = "mocha",
 				integrations = {
 					cmp = true,
-	        gitsigns = true,
-	        nvimtree = true,
-	        treesitter = true,
+					gitsigns = true,
+					nvimtree = true,
+					treesitter = true,
 					indent_blankline = {
-				    enabled = true,
-				    scope_color = "mocha",
-				    colored_indent_levels = true,
+						enabled = true,
+						colored_indent_levels = true,
 					},
-				}
-			}
-		end
-	},
-  { "nvim-tree/nvim-web-devicons", lazy = true },
-  {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    lazy = false,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("nvim-tree").setup {}
-    end,
-  },
-	{
-    'akinsho/bufferline.nvim',
-		lazy = true,
-    event = "BufRead",
-    version = "*",
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require("bufferline").setup {
-				highlights = require("catppuccin.groups.integrations.bufferline").get(),
-        options = {
-					indicator = {
-						style = "icon"
-					},
-          show_close_icon = true,
-          diagnostics = "nvim_lsp",
-          separator_style = "slant",
-      },
-    }
-    end
-  },
-	{
-		'nvim-lualine/lualine.nvim',
-		event = 'VeryLazy',
-		opts = {
-  	  options = {
-      	theme = 'catppuccin',
-				icons_enabled = true,
-    	  disabled_filetypes = {
-      		statusline = {'NvimTree'}
-      	}
-    	},
-    },
-		init = function()
-		  vim.opt.showmode = false
+				},
+			})
 		end,
-  },
-	{
-		'lukas-reineke/indent-blankline.nvim',
-		main = 'ibl',
-		event = {'BufReadPost', 'BufNewFile'},
-		opts = {
-			enabled = true,
-		  scope = {
-		  	enabled = true,
-		  },
-		  indent = {
-		    char = '▏',
-		  },
-		}
 	},
 	{
 		"windwp/nvim-autopairs",
-	  config = function()
-    	require("nvim-autopairs").setup({})
-	  end
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
 	},
 	{
 		"stevearc/conform.nvim",
 		event = { "BufReadPre", "BufNewFile" },
-	  config = function()
-	    local conform = require("conform")
-	    conform.setup({
-		    log_level = vim.log.levels.DEBUG,
-		    formatters_by_ft = {
-		    	javascript = { "prettierd" },
-		    	typescript = { "prettierd" },
-		    	typescriptreact = { "prettierd" },
-		    },
+		config = function()
+			local conform = require("conform")
+			conform.setup({
+				format_on_save = {
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 5000,
+				},
+				log_level = vim.log.levels.DEBUG,
+				formatters_by_ft = {
+					javascript = { "biome", "prettierd", stop_after_first = true },
+					typescript = { "biome", "prettierd", stop_after_first = true },
+					typescriptreact = { "biome", "prettierd", stop_after_first = true },
+					svelte = { "prettierd" },
+					json = { "biome" },
+					lua = { "stylua" },
+					css = { "prettierd" },
+				},
 			})
 		end,
 	},
-	{ "github/copilot.vim" }
+	{
+		"numToStr/Comment.nvim",
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {},
+	},
+	{
+		"folke/lazydev.nvim",
+		ft = "lua",
+		opts = {
+			library = {},
+		},
+	},
 }
