@@ -20,7 +20,7 @@ git clone https://github.com/Rovikin/nvim ~/.config/nvim
 
 ## Setup Copilot Plugin
 
-Untuk menggunakan Copilot plugin, kalian perlu memiliki akun GitHub dan menginstall ekstensi Copilot di Visual Studio Code. Setelah itu, kalian bisa mengikuti langkah-langkah berikut untuk mengaktifkan Copilot di nvim:
+Untuk menggunakan Copilot plugin, kalian perlu memiliki akun GitHub dan menginstall ekstensi Copilot di Visual Studio Code. Untuk dintermux kalian cukup memiliki akun github untuk dapat terkoneksi dengan Copilot. Setelah itu, kalian bisa mengikuti langkah-langkah berikut untuk mengaktifkan Copilot di nvim:
 1. Buka nvim dan jalankan perintah `:Copilot setup` untuk mengaktifkan Copilot plugin
 ```bash
 :Copilot setup
