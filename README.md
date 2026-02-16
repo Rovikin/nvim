@@ -1,6 +1,10 @@
 # My nvim configurations
 
-Ini adalah repositori yang saya fork dari [lzif](https://github.com/lzif/nvim) untuk menyimpan konfigurasi sesuai dengan kebutuhan saya. Disini saya mengandalkan Packer sebagai plugin manager, dan saya menggunakan beberapa plugin yang saya rasa penting untuk menunjang produktivitas saya dalam menggunakan nvim. Namun untuk fitur yang lebih lengkap, kalian bisa kunjungi repositori asli dari [lzif](https://github.com/lzif/nvim) untuk melihat konfigurasi yang lebih lengkap dan fitur yang lebih banyak.
+Ini adalah repositori yang saya fork dari [lzif](https://github.com/lzif/nvim) untuk menyimpan konfigurasi sesuai dengan kebutuhan saya. Disini saya mengandalkan Packer sebagai plugin manager, dan saya menggunakan beberapa plugin yang saya rasa penting untuk menunjang produktivitas saya dalam menggunakan neovimim di Termux.
+
+Beberapa fitur bawaan dari [lzif](https://github.com/lzif/nvim) tidak lagi saya gunakan. Saya hanya menyisakam 1 file configurasi untuk semua plugin yang saya gunakan, yaitu `init.lua`. Tidak banyak yang saya gunakan karena sebagian besar tugas plugin sudah terwakili oleh plugin Copilot.
+
+Namun untuk fitur yang lebih lengkap, kalian bisa kunjungi repositori asli dari [lzif](https://github.com/lzif/nvim) untuk melihat konfigurasi yang lebih lengkap dan fitur yang lebih banyak.
 
 ## Fitur
 - NvimTreeToggle: (ctrl + n) untuk membuka dan menutup file explorer
@@ -20,7 +24,9 @@ git clone https://github.com/Rovikin/nvim ~/.config/nvim
 
 ## Setup Copilot Plugin
 
-Untuk menggunakan Copilot plugin, kalian perlu memiliki akun GitHub dan menginstall ekstensi Copilot di Visual Studio Code. Untuk dintermux kalian cukup memiliki akun github untuk dapat terkoneksi dengan Copilot. Setelah itu, kalian bisa mengikuti langkah-langkah berikut untuk mengaktifkan Copilot di nvim:
+Untuk menggunakan Copilot plugin di Termux, kalian perlu memiliki akun GitHub.
+
+Kemudian kalian bisa mengikuti langkah-langkah berikut untuk mengaktifkan Copilot di nvim:
 1. Buka nvim dan jalankan perintah `:Copilot setup` untuk mengaktifkan Copilot plugin
 ```bash
 :Copilot setup
