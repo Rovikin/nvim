@@ -1,0 +1,19 @@
+# --- Plugin Managers ---
+# Folder tempat install plugin (ukurannya gede banget, mending download ulang via Packer/Lazy)
+pack/
+# Cache kompilasi Packer
+plugin/packer_compiled.lua
+
+# --- Runtime & Cache ---
+# File swap (kalau nvim crash)
+*.swp
+# Undo history (biar gak nyampah)
+.netrwhist
+undo/
+
+# --- LSP & Log ---
+# Log file LSP atau plugin lain
+*.log
+
+# --- OS/System ---
+.DS_Store
